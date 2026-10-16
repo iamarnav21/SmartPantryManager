@@ -29,7 +29,7 @@ import java.util.Map;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "smart_pantry.db";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
 
     // pantry table
     private static final String T_PANTRY = "pantry";
@@ -309,6 +309,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         + "3. Add lentils and water, simmer 25 minutes.\n4. Season with salt.",
                 "lentils|200|g", "onion|1|pcs", "garlic|2|pcs", "tomato|2|pcs", "oil|1|tbsp",
                 "curry powder|2|tsp", "salt|1|tsp");
+
+        addRecipe(db, "Peanut Butter Banana Toast",
+                "1. Toast the bread.\n2. Spread with peanut butter.\n3. Top with sliced banana.",
+                "bread|2|pcs", "peanut butter|30|g", "banana|1|pcs");
+
+        addRecipe(db, "Creamy Rice Pudding",
+                "1. Put rice, milk and sugar in a pot.\n2. Simmer on low heat for 25 minutes, stirring often.\n3. Serve warm.",
+                "rice|100|g", "milk|500|ml", "sugar|30|g");
+
+        addRecipe(db, "Garlic Fried Egg",
+                "1. Heat oil and fry the minced garlic for 30 seconds.\n2. Crack in the eggs and fry to your liking.\n3. Season with salt.",
+                "egg|2|pcs", "garlic|1|pcs", "oil|1|tbsp", "salt|0.5|tsp");
     }
 
     private void addRecipe(SQLiteDatabase db, String name, String steps, String... ingredients) {
