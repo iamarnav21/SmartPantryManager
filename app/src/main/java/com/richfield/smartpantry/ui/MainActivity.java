@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements PantryAdapter.OnI
     private void loadPantry() {
         List<PantryItem> items = db.getAllPantryItems();
         adapter.setItems(items);
+        setTitle(getString(R.string.app_name) + " (" + items.size() + ")");
         tvEmpty.setVisibility(items.isEmpty() ? View.VISIBLE : View.GONE);
         updateExpiryBanner(items);
     }
