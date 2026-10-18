@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements PantryAdapter.OnI
         List<String> names = new ArrayList<>();
         Date today = new Date();
         for (PantryItem item : items) {
-            if (ExpiryUtils.isExpiringSoon(item.getExpiry(), today, 3)) names.add(item.getName());
+            if (ExpiryUtils.isExpiringSoon(item.getExpiry(), today, ExpiryUtils.EXPIRY_WARNING_DAYS)) names.add(item.getName());
         }
 
         if (alertsOn && !names.isEmpty()) {

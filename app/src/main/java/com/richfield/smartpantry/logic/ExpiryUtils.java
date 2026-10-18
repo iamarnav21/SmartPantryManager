@@ -9,6 +9,8 @@ import java.util.Locale;
 public final class ExpiryUtils {
 
     public static final String FORMAT = "yyyy-MM-dd";
+    /** Items expiring within this many days count as "expiring soon". */
+    public static final int EXPIRY_WARNING_DAYS = 3;
     private static final long DAY_MS = 24L * 60L * 60L * 1000L;
 
     private ExpiryUtils() { }

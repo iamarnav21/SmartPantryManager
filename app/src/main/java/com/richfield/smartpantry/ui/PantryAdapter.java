@@ -64,7 +64,7 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
             holder.tvExpiry.setText("No expiry date");
             holder.tvExpiry.setTextColor(Color.parseColor("#616161"));
         } else {
-            boolean soon = ExpiryUtils.isExpiringSoon(item.getExpiry(), new Date(), 3);
+            boolean soon = ExpiryUtils.isExpiringSoon(item.getExpiry(), new Date(), ExpiryUtils.EXPIRY_WARNING_DAYS);
             holder.tvExpiry.setText("Expires: " + item.getExpiry() + (soon ? "  (soon!)" : ""));
             holder.tvExpiry.setTextColor(Color.parseColor(soon ? "#C62828" : "#616161"));
         }
