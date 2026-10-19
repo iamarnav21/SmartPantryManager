@@ -94,4 +94,15 @@ public class RecipeMatcherTest {
     public void emptyPantryMatchesNothing() {
         assertTrue(RecipeMatcher.strictMatches(new ArrayList<PantryItem>(), recipes()).isEmpty());
     }
+
+    @Test
+    public void cupsAreConvertedToMillilitres() {
+        Recipe r = new Recipe(2, "Porridge", "cook");
+        r.addIngredient(new RecipeIngredient("milk", 300, "ml"));
+        List<Recipe> list = new ArrayList<>();
+        list.add(r);
+        List<PantryItem> pantry = new ArrayList<>();
+        pantry.add(new PantryItem(1, "Milk", 2, "cup", ""));   // 2 cups = 480 ml
+        assertEquals(1, RecipeMatcher.strictMatches(pantry, list).size());
+    }
 }

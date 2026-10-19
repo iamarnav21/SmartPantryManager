@@ -85,6 +85,7 @@ public class SuggestedRecipesActivity extends AppCompatActivity
         }
 
         adapter.setMatches(shown);
+        tvHeading.setText(tvHeading.getText() + " (" + shown.size() + " found)");
         tvEmpty.setVisibility(shown.isEmpty() ? View.VISIBLE : View.GONE);
 
         // Visually mark which list is active

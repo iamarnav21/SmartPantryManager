@@ -72,7 +72,7 @@ public final class RecipeMatcher {
                 return "l";
             case "tsp": case "teaspoon": case "teaspoons":
                 return "tsp";
-            case "tbsp": case "tablespoon": case "tablespoons":
+            case "tbsp": case "tbs": case "tblsp": case "tablespoon": case "tablespoons":
                 return "tbsp";
             case "cup": case "cups":
                 return "cup";
@@ -181,4 +181,6 @@ public final class RecipeMatcher {
         }
         return out;
     }
-}
+
+
+    }
