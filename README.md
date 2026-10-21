@@ -78,3 +78,8 @@ app/src/test/  RecipeMatcherTest     (JUnit tests for the strict rule)
 ## Restrictions respected
 
 No Google Maps, mapping SDK, GPS or location features. No payments. Not published to the Play Store.
+## Known limitations
+- Expired items are still counted when matching recipes.
+- Ingredient names only match singular and plural forms; synonyms such as aubergine and eggplant are treated as different items.
+- Only the units g, kg, ml, l, tsp, tbsp, cup and pcs are supported.
+- Recipes are fixed in the database; users cannot add their own recipes in the app.
