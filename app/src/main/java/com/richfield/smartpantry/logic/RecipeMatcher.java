@@ -29,6 +29,17 @@ public final class RecipeMatcher {
 
     private RecipeMatcher() { }
 
+
+    /** Different words for the same ingredient are mapped to one standard name. */
+    private static final Map<String, String> SYNONYMS = new HashMap<>();
+    static {
+        SYNONYMS.put("aubergine", "eggplant");
+        SYNONYMS.put("courgette", "zucchini");
+        SYNONYMS.put("capsicum", "bell pepper");
+        SYNONYMS.put("coriander", "cilantro");
+        SYNONYMS.put("prawn", "shrimp");
+    }
+
     // ---------------------------------------------------------------- names
 
     /** Lower-cases, trims and singularises the LAST word of an ingredient name. */
@@ -39,7 +50,9 @@ public final class RecipeMatcher {
         int lastSpace = s.lastIndexOf(' ');
         String head = lastSpace >= 0 ? s.substring(0, lastSpace + 1) : "";
         String word = lastSpace >= 0 ? s.substring(lastSpace + 1) : s;
-        return head + singular(word);
+        String name = head + singular(word);
+        String synonym = SYNONYMS.get(name);
+        return synonym != null ? synonym : name;
     }
 
     /** Very small English singulariser - enough for ingredient names, not full NLP. */
@@ -182,5 +195,7 @@ public final class RecipeMatcher {
         return out;
     }
 
-
+   
     }
+
+
