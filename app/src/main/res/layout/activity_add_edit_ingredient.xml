@@ -67,6 +67,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:focusable="false"
                 android:hint="Tap to choose a date"
                 android:inputType="none" />

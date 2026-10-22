@@ -52,6 +52,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         etName = findViewById(R.id.etName);
         etQuantity = findViewById(R.id.etQuantity);
         etExpiry = findViewById(R.id.etExpiry);
+        etExpiry.setClickable(true);
         spinnerUnit = findViewById(R.id.spinnerUnit);
         Button btnSave = findViewById(R.id.btnSave);
         Button btnClear = findViewById(R.id.btnClearExpiry);
